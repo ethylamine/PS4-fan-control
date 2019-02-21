@@ -67,7 +67,7 @@ int _main(void)
       sceSysUtilSendSystemNotificationWithText(0x81, "icc_fan opened\n\n");
    }
 
-   char *data[11] = {0x00, 0x00, 0x00, 0x00, 0x00, 60, 0x00, 0x00, 0x00, 0x00, 0x08}; // swap 60 with whatever temp threshold you want, 0x08 may be unnecessary
+   char data[10] = {0x00, 0x00, 0x00, 0x00, 0x00, 60, 0x00, 0x00, 0x00, 0x00}; // swap 60 with whatever temp threshold you want
    int ret = ioctl(fd, 0xC01C8F07, data);
    close(fd);
 
